@@ -7,8 +7,8 @@ const archs = ['ia32', 'x64']
 const platforms = ['linux', 'win32', 'darwin']
 const linuxPackageTargets = ['deb', 'rpm']
 
-const combinations = compact(flatten(archs.map(arch => {
-  return platforms.map(platform => {
+const combinations = compact(flatten(archs.map((arch) => {
+  return platforms.map((platform) => {
     // No 32bit build for OS X
     if (platform === 'darwin' && arch === 'ia32') return
 
@@ -49,7 +49,7 @@ combinations.filter(({arch}) => arch === 'win32').forEach(({platform, arch}) => 
 
 // Create linux packages using fpm
 combinations.filter(({arch}) => arch === 'linux').forEach(({platform, arch}) => {
-  linuxPackageTargets.forEach(target => {
+  linuxPackageTargets.forEach((target) => {
     gulp.task(`pack:${platform}:${arch}:${target}`, [`build:${platform}:${arch}`], () => {
 
     })
@@ -57,7 +57,7 @@ combinations.filter(({arch}) => arch === 'linux').forEach(({platform, arch}) => 
 })
 
 // All the windows packages
-gulp.task('pack:windows', done => {
+gulp.task('pack:windows', (done) => {
   runSequence(
     'pack:windows:ia32',
     'pack:windows:x64',
@@ -66,7 +66,7 @@ gulp.task('pack:windows', done => {
 })
 
 // All the linux packages
-gulp.task('pack:linux', done => {
+gulp.task('pack:linux', (done) => {
   runSequence(
     'pack:linux:ia32:rpm',
     'pack:linux:ia32:deb',
@@ -77,7 +77,7 @@ gulp.task('pack:linux', done => {
 })
 
 // All the packages
-gulp.task('release:pack', done => {
+gulp.task('release:pack', (done) => {
   runSequence(
     'pack:darwin',
     'pack:windows',
@@ -118,7 +118,7 @@ gulp.task('release:github', () => {
 })
 
 // Create a full relase
-gulp.task('release', done => {
+gulp.task('release', (done) => {
   runSequence(
     'lint',
     'pack',
