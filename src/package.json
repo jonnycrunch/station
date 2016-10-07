@@ -1,0 +1,30 @@
+{
+  "name": "ipfs-station",
+  "product-name": "IPFS Station",
+  "version": "1.0.0-alpha.1",
+  "description": "IPFS Native Application",
+  "main": "index.js",
+  "author": "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
+  "dependencies": {
+    "css-box-sizing-border-box": "^0.1.0",
+    "ipfs-api": "^9.0.0",
+    "ipfs-geoip": "^2.1.0",
+    "ipfs-logo": "github:ipfs/logo",
+    "ipfsd-ctl": "^0.16.0",
+    "menubar": "^5.0.0",
+    "minimist": "^1.2.0",
+    "multiaddr": "^2.0.2",
+    "node-notifier": "^4.3.1",
+    "normalize.css": "^5.0.0",
+    "radium": "^0.18.0",
+    "react": "^15.1.0",
+    "react-addons-css-transition-group": "^15.1.0",
+    "react-dnd": "^2.1.2",
+    "react-dnd-html5-backend": "^2.1.2",
+    "react-dom": "^15.1.0",
+    "react-widgets": "^3.2.0",
+    "winston": "^2.1.0"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/ipfs/station"
+}
